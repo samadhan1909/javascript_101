@@ -26,4 +26,29 @@ const myFunction = function(){
     console.log("Hello World");
 }
 
-console.log(typeof myFunction);
+// console.log(typeof myFunction);
+
+
+// *************************************************** Memory *********************************************
+
+// stack(primitive) , Heap(Non Primitive)
+
+let myName = "Samadhan"
+let anotherName = myName
+anotherName = "Sama"
+
+console.log(myName);
+console.log(anotherName);
+
+// non Primitive passes value by reference 
+
+let userOne ={
+    email: "user@gmail.com",
+    upi: "user@oksbi"
+}
+
+let userTwo = userOne
+userTwo.email = "samadhan@google.com"
+
+console.log(userOne.email);
+console.log(userTwo.email);
