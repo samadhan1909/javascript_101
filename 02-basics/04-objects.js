@@ -46,10 +46,39 @@ const users =[
 ]
 
 users[1].email
-console.log(tinderUser);
+// console.log(tinderUser);
 
-console.log(Object.keys(tinderUser));
-console.log(Object.values(tinderUser));
-console.log(Object.entries(tinderUser));
+// console.log(Object.keys(tinderUser));
+// console.log(Object.values(tinderUser));
+// console.log(Object.entries(tinderUser));
 
-console.log(tinderUser.hasOwnProperty("isLoggedIn")); // to ask if the tinderUser object has osomething of our intrest ie. isLoggedIn property
+// console.log(tinderUser.hasOwnProperty("isLoggedIn")); // to ask if the tinderUser object has osomething of our intrest ie. isLoggedIn property
+
+
+//8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
+// De-structuring objects 
+
+const course = {
+    coursename: "JS Hindi",
+    price: 99, 
+    courseInstructor: "HiteshC"
+}
+
+// course.courseInstructor
+ 
+const {courseInstructor : constructor}= course
+console.log(constructor);
+
+// data from API eg.
+
+// {
+//     "name": "Samadhan",
+//     "age": 21,
+//     "location": "Pune"
+// }
+
+// [
+//     {},
+//     {},
+//     {}
+// ]
