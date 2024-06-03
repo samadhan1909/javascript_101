@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #button{
+            margin-top: 25px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    0	UNSENT	Client has been created. open() not called yet. </br>
+    1	OPENED	open() has been called.</br>
+    2	HEADERS_RECEIVED	send() has been called, and headers and status are available.</br>
+    3	LOADING	Downloading; responseText holds partial data.</br>
+    4	DONE	The operation is complete.</br>
+    <button id="button">click to Display</button>
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/samadhan1909'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState=== 4){
+            const data = JSON.parse(this.responseText)
+            console.log(typeof data);
+            console.log(data.followers);
+
+            //creating a node 
+            const newElement = document.createElement('div')
+            document.body.appendChild(newElement);
+            // evvent listener 
+            document.querySelector('#button').addEventListener('click', function(e){
+                newElement.innerHTML = `<img scr:"${data.avatar_url}" id:"DisplayPhoto" height:"30%">Photo ${data.avatar_url}</img>  </br>  <div> followers: ${data.followers}`
+                console.log(newElement);
+
+                newElement.style.margin = '20%, 20%'
+
+            })
+        }
+    }
+    
+    xhr.send();
+  
+
+</script>
+
+</html>
